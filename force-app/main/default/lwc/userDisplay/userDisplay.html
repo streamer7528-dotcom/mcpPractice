@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="User Information" icon-name="standard:user">
+        <div class="slds-p-around_medium">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading..." size="small"></lightning-spinner>
+            </template>
+            <template if:false={isLoading}>
+                <div class="user-info-container">
+                    <div class="info-row">
+                        <lightning-icon icon-name="utility:user" size="small" class="info-icon"></lightning-icon>
+                        <div class="info-content">
+                            <span class="info-label">Name</span>
+                            <span class="info-value">{userName}</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <lightning-icon icon-name="utility:identity" size="small" class="info-icon"></lightning-icon>
+                        <div class="info-content">
+                            <span class="info-label">Username</span>
+                            <span class="info-value">{userUsername}</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <lightning-icon icon-name="utility:date_input" size="small" class="info-icon"></lightning-icon>
+                        <div class="info-content">
+                            <span class="info-label">Current Date</span>
+                            <span class="info-value">{currentDate}</span>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
